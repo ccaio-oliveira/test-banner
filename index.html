@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AppsFlyer Certificate App</title>
+    <link rel="stylesheet" href="styles.css">
+    
+    <script>
+        !function(t,e,n,s,a,c,i,o,p){t.AppsFlyerSdkObject=a,t.AF=t.AF||function(){(t.AF.q=t.AF.q||[]).push([Date.now()].concat(Array.prototype.slice.call(arguments)))},t.AF.id=t.AF.id||i,t.AF.plugins={},o=e.createElement(n),p=e.getElementsByTagName(n)[0],o.async=1,o.src="https://websdk.appsflyer.com?"+(c.length>0?"st="+c.split(",").sort().join(",")+"&":"")+(i.length>0?"af_id="+i:""),p.parentNode.insertBefore(o,p)}(window,document,"script",0,"AF","banners",{banners: {key: "1b99d8d6-4131-4d2a-ae7e-c06144fe6060"}});
+        AF('banners', 'showBanner')
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AppsFlyer Certificate App</h1>
+            <p>Baixe nosso aplicativo e aproveite todos os recursos!</p>
+        </header>
+
+        <main>
+            <!-- =================== SMART BANNER CUSTOMIZADO =================== -->
+            <div class="smart-banner-section">
+                <h2>📱 Smart Banner & OneLink</h2>
+                <p>Banner inteligente com detecção de dispositivo e parâmetros UTM</p>
+                
+                <!-- Banner principal com SmartScript integrado -->
+                <div class="app-banner smart-banner" id="smartBanner">
+                    <div class="banner-content">
+                        <div class="app-info">
+                            <img src="app-icon.png" alt="App Icon" class="app-icon" id="appIcon">
+                            <div class="app-details">
+                                <h2>AppsFlyer Certificate App</h2>
+                                <p id="deviceInfo">Detectando dispositivo...</p>
+                                <div class="app-rating">
+                                    <span class="stars">★★★★★</span>
+                                    <span class="rating-text">4.8 (1.2k avaliações)</span>
+                                </div>
+                                <!-- UTM Parameters Display -->
+                                <div class="utm-info" id="utmInfo" style="font-size: 0.8rem; color: #666; margin-top: 8px;">
+                                    <span id="utmDisplay"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="download-btn smart-script-btn" id="smartScriptBtn" data-af-smart-btn="true">
+                            <span class="btn-text" id="btnText">Baixar App</span>
+                            <span class="btn-subtitle" id="btnSubtitle">SmartScript</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- =================== SMART SCRIPT BUTTONS =================== -->
+            <div class="smart-script-section">
+                <h2>🔗 SmartScript Buttons</h2>
+                <p>Botões com OneLink e tracking automático</p>
+                
+                <div class="smart-buttons">
+                    <!-- Botão 1: Download Principal -->
+                    <button class="smart-btn primary" id="smartBtn1" data-af-smart-btn="true">
+                        <span class="icon">📲</span>
+                        <div class="btn-content">
+                            <strong>Download Inteligente</strong>
+                            <small>OneLink + UTM tracking</small>
+                        </div>
+                    </button>
+                    
+                    <!-- Botão 2: Oferta Especial -->
+                    <button class="smart-btn secondary" id="smartBtn2" data-af-smart-btn="true">
+                        <span class="icon">🎁</span>
+                        <div class="btn-content">
+                            <strong>Oferta Especial</strong>
+                            <small>Com parâmetros customizados</small>
+                        </div>
+                    </button>
+                    
+                    <!-- Botão 3: Try Now -->
+                    <button class="smart-btn accent" id="smartBtn3" data-af-smart-btn="true">
+                        <span class="icon">⚡</span>
+                        <div class="btn-content">
+                            <strong>Experimente Agora</strong>
+                            <small>Tracking de conversão</small>
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- =================== QR CODE SECTION =================== -->
+            <div class="qr-code-section">
+                <h2>📱 QR Code com SmartScript</h2>
+                <p>Escaneie para abrir o app com tracking completo</p>
+                
+                <div class="qr-container">
+                    <div class="qr-code-wrapper">
+                        <!-- QR Code será gerado dinamicamente -->
+                        <div id="qrCode" class="qr-code"></div>
+                        <p class="qr-instruction">Escaneie com a câmera do seu celular</p>
+                    </div>
+                    
+                    <div class="qr-info">
+                        <h3>OneLink URL</h3>
+                        <div class="onelink-url" id="onelinkUrl">
+                            <code id="qrUrl">Gerando URL...</code>
+                            <button class="copy-btn" id="copyUrlBtn" title="Copiar URL">📋</button>
+                        </div>
+                        
+                        <div class="qr-parameters">
+                            <h4>Parâmetros do QR Code:</h4>
+                            <ul id="qrParams">
+                                <li>media_source: qr_code</li>
+                                <li>campaign: qr_landing</li>
+                                <li>af_channel: organic</li>
+                                <li>custom_param: qr_scan</li>
+                            </ul>
+                        </div>
+                        
+                        <button class="regenerate-qr-btn" id="regenerateQr">
+                            🔄 Regenerar QR Code
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- =================== TESTING & DEBUG =================== -->
+            <div class="debug-section">
+                <h2>🔍 Debug & Testing</h2>
+                <p>Informações de debug para desenvolvimento</p>
+                
+                <div class="debug-panels">
+                    <div class="debug-panel">
+                        <h3>Device Detection</h3>
+                        <div id="deviceDebug" class="debug-content">
+                            <p><strong>User Agent:</strong> <span id="userAgent"></span></p>
+                            <p><strong>Platform:</strong> <span id="platform"></span></p>
+                            <p><strong>Detected Device:</strong> <span id="detectedDevice"></span></p>
+                        </div>
+                    </div>
+                    
+                    <div class="debug-panel">
+                        <h3>AppsFlyer Status</h3>
+                        <div id="appsflyerDebug" class="debug-content">
+                            <p><strong>SDK Status:</strong> <span id="sdkStatus">Verificando...</span></p>
+                            <p><strong>OneLink ID:</strong> <span id="debugOneLinkId"></span></p>
+                            <p><strong>Last Event:</strong> <span id="lastEvent">Nenhum</span></p>
+                        </div>
+                    </div>
+                    
+                    <div class="debug-panel">
+                        <h3>URL Parameters</h3>
+                        <div id="urlDebug" class="debug-content">
+                            <div id="urlParams"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Seção original de links das lojas (mantida como fallback) -->
+            <div class="store-links">
+                <h3>Ou baixe diretamente:</h3>
+                <div class="store-buttons">
+                    <a href="#" class="store-button app-store" id="appStoreBtn">
+                        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download na App Store">
+                    </a>
+                    <a href="#" class="store-button google-play" id="googlePlayBtn">
+                        <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Disponível no Google Play">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Seção de recursos mantida -->
+            <div class="app-features">
+                <h3>Recursos do App</h3>
+                <ul>
+                    <li>Interface intuitiva e fácil de usar</li>
+                    <li>Sincronização em tempo real</li>
+                    <li>Funciona offline</li>
+                    <li>Suporte a múltiplas plataformas</li>
+                    <li>Tracking avançado com AppsFlyer</li>
+                </ul>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 AppsFlyer Certificate App. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+
+    <!-- Include QR Code Library -->
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
