@@ -96,10 +96,6 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
         });
     }
-
-    new appsflyer.SmartBanner({
-        title: "AppsFlyer",
-    })
 });
 
 // =================== WINDOW EVENT HANDLERS ===================
