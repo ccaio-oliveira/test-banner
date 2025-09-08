@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AppsFlyer Certificate App</title>
-    <link rel="stylesheet" href="styles.css">xw
+    <link rel="stylesheet" href="styles.css">
 
     <script>
         !function(t,e,n,s,a,c,i,o,p){t.AppsFlyerSdkObject=a,t.AF=t.AF||function(){(t.AF.q=t.AF.q||[]).push([Date.now()].concat(Array.prototype.slice.call(arguments)))},t.AF.id=t.AF.id||i,t.AF.plugins={},o=e.createElement(n),p=e.getElementsByTagName(n)[0],o.async=1,o.src="https://websdk.appsflyer.com?"+(c.length>0?"st="+c.split(",").sort().join(",")+"&":"")+(i.length>0?"af_id="+i:""),p.parentNode.insertBefore(o,p)}(window,document,"script",0,"AF","banners",{banners: {key: "1b99d8d6-4131-4d2a-ae7e-c06144fe6060"}});
@@ -23,13 +23,18 @@
             <div class="store-links">
                 <h3>Ou baixe diretamente:</h3>
                 <div class="store-buttons">
-                    <a href="https://caaqui.onelink.me/dD0I/smartbanner" class="store-button app-store" id="appStoreBtn">
+                    <a href="#" class="store-button app-store" id="appStoreBtn">
                         <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download na App Store">
                     </a>
-                    <a href="https://caaqui.onelink.me/dD0I/smartbanner" class="store-button google-play" id="googlePlayBtn">
+                    <a href="#" class="store-button google-play" id="googlePlayBtn">
                         <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Disponível no Google Play">
                     </a>
                 </div>
+            </div>
+
+            <div class="store-links">
+                <h3>Ou leia o QR Code:</h3>
+                <div id="qrcode-container" style="margin-top:20px;"></div>
             </div>
 
             <!-- Seção de recursos mantida -->
@@ -52,6 +57,7 @@
 
     <!-- Include QR Code Library -->
     <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+    <script src="https://onelinksmartscript.appsflyer.com/onelink-smart-script-latest.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
