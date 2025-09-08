@@ -19,9 +19,7 @@ window.addEventListener("load", function () {
 
   if (result && result.clickURL) {
     let finalURL = result.clickURL;
-    if (window.location.href.includes("af_debug=true")) {
-      finalURL += "&af_force_deeplink=true";
-    }
+    finalURL += "&af_force_deeplink=true";
 
     document.getElementById("appStoreBtn").href = finalURL;
     document.getElementById("googlePlayBtn").href = finalURL;
