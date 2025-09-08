@@ -22,7 +22,7 @@ var result = window.AF_SMART_SCRIPT.generateOneLinkURL({
 if (result && result.clickURL) {
     const finalURL = result.clickURL + "&af_force_deeplink=true";
     document.getElementById("appStoreBtn").href = finalURL;
-    document.getElementById("googlePlayBtn").href = finalURL;
+    document.getElementById("googlePlayBtn").href = result.clickURL;
 
     // QR Code em desktop
     if (window.innerWidth > 900) {
